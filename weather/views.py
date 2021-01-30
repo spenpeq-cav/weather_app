@@ -17,6 +17,10 @@ def index(request):
             'country_code': str(list_of_data['sys']['country']),
             'coordinates': str(list_of_data['coord']['lon']) + ', '+ str(list_of_data['coord']['lat']) ,
             'temp': str(list_of_data['main']['temp']),
+            'feels_like': str(list_of_data['main']['feels_like']),
+            'temp_min': str(list_of_data['main']['temp_min']),
+            'temp_max': str(list_of_data['main']['temp_max']),
+            'wind_speed': str(list_of_data['wind']['speed']),
             'pressure': str(list_of_data['main']['pressure']), 
             'humidity': str(list_of_data['main']['humidity']), 
             'main': str(list_of_data['weather'][0]['main']),
@@ -29,3 +33,8 @@ def index(request):
         data = {}
 
     return render(request, 'weather/index.html', data)
+
+<h4><span class="badge badge-primary">Temperature (feels like) :</span> {{feels_like}}</h4>
+        <h4><span class="badge badge-primary">Temperature min. :</span> {{temp_min}}</h4>
+        <h4><span class="badge badge-primary">Temperature max. :</span> {{temp_max}}</h4>
+        <h4><span class="badge badge-primary">Wind Speed:</span> {{wind_speed}}</h4>

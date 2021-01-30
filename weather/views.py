@@ -33,8 +33,3 @@ def index(request):
         data = {}
 
     return render(request, 'weather/index.html', data)
-
-<h4><span class="badge badge-primary">Temperature (feels like) :</span> {{feels_like}}</h4>
-        <h4><span class="badge badge-primary">Temperature min. :</span> {{temp_min}}</h4>
-        <h4><span class="badge badge-primary">Temperature max. :</span> {{temp_max}}</h4>
-        <h4><span class="badge badge-primary">Wind Speed:</span> {{wind_speed}}</h4>
